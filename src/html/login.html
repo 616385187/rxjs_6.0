@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<div id="login-page" class="main_container">
+    <div class="col s12 z-depth-6 card-panel">
+        <form name="form" class="login-form" action="http://192.168.1.135:8080/user/login" method="post">
+            <div class="row">
+                <div class="input-field col s12 center">
+                    <img src="http://w3lessons.info/logo.png" alt="" class="responsive-img valign profile-image-login">
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-social-person-outline prefix"></i>
+                    <input class="validate" id="email" type="email">
+                    <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-action-lock-outline prefix"></i>
+                    <input id="password" type="password">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12  login-text">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">记住我</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <!--href="javascript: form.submit()"-->
+                    <a  class="btn waves-effect waves-light col s12" id="login" >登　录</a>
+                </div>
+            </div>
+            <div class="row">
+                <!--<div class="input-field col s6 m6 l6">-->
+                <!--<p class="margin right-align medium-small"><a href="forgot-password.html">忘记密码?</a></p>-->
+                <!--</div>-->
+            </div></form>
+    </div>
+</div>
+</body>
+</html>
