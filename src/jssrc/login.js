@@ -39,7 +39,18 @@ function validate_required(field,alerttxt)
     {alert(alerttxt);return false}
     else {return true}
 }
-
+function isLoginSuccess(result){
+    console.log(result);
+    console.log(result.result);
+    console.log(result.result==="ok");
+    if (result.result ==="ok") {
+        self.location = "index.html"
+    }else {
+        alert("用户名或密码错误！")
+        document.getElementsByClassName("login-form").reset();
+    }
+    return result.result ==="ok"
+}
 // window.document.getElementById("login").addEventListener('click',ev => getRepos(document.getElementById("email").value,document.getElementById("password").value).subscribe(x =>console.log(x)))
 $(()=>{
     try {
@@ -48,11 +59,11 @@ $(()=>{
             .filter(() =>validate_required(document.getElementById("email"),"请输入用户名"))
             .filter(() =>validate_required(document.getElementById("password"),"请输入密码"))
             .flatMap(()=>getRepos(document.getElementById("email").value,document.getElementById("password").value))
-            .map((result)=> result.parseJSON())
+            .map((result)=> $.parseJSON(result))
+            .filter(isLoginSuccess)
             .subscribe( x => console.log( x ));
     }catch (e) {
         console.log(e)
     }
-
 
 })
