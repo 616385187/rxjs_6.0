@@ -1,5 +1,4 @@
 var $ =require("jquery");
-import Materialize from "materialize-css"
 import "materialize-css/dist/css/materialize.css"
 import "../css/base.css"
 import {Observable} from 'rxjs/Rx';
@@ -44,7 +43,7 @@ function isLoginSuccess(result){
     console.log(result.result);
     console.log(result.result==="ok");
     if (result.result ==="ok") {
-        self.location = "index.html"
+        self.location = "main.html"
     }else {
         alert("用户名或密码错误！")
         document.getElementsByClassName("login-form").reset();
